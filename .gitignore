@@ -1,0 +1,15 @@
+.env
+*.env
+!*.example.env
+.DS_Store
+Thumbs.db
+*.tmp
+node_modules/
+__pycache__/
+.venv/
+
+# Keep folders; don't commit dumped media binaries
+media/inbox/*
+!media/inbox/.gitkeep
+media/library/*
+!media/library/.gitkeep
