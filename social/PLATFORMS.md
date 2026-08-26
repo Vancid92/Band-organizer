@@ -1,6 +1,6 @@
 # Social platforms
 
-Queue-only in v1: draft copy here, then the user publishes. One `social/posts.csv` row per platform.
+One `social/posts.csv` row per platform. Instagram and YouTube can go live via `scripts/publish.py` when env is set ([LIVE_PUBLISH.md](LIVE_PUBLISH.md)). Facebook, TikTok, X, and Threads stay drafts you publish yourself.
 
 Fill handles/URLs in [`config/socials.csv`](../config/socials.csv). Do not invent profile URLs.
 

@@ -1,6 +1,6 @@
 # Band organizer
 
-Workspace for members, gigs, rehearsals, songs/setlists, and a **queue-only** social post pipeline. Dump notes or files in chat; the agent writes CSVs and markdown. You publish from drafts until APIs exist.
+Workspace for members, gigs, rehearsals, songs/setlists, and a social post pipeline. Dump notes or files in chat; the agent writes CSVs and markdown. Instagram and YouTube can publish live when env is configured; other platforms stay queue-only.
 
 ## Quick start
 
@@ -13,8 +13,8 @@ Workspace for members, gigs, rehearsals, songs/setlists, and a **queue-only** so
    - “Rehearsal Thursday 7pm at the practice space — run the Saturday set”
    - “New song: Neon River, key of G, we’re learning it”
    - “Setlist for The Hideout: …”
-   - Drop a photo/video and: “Queue this for Instagram and Facebook”
-   - “Posted on Instagram”
+   - Drop a photo/video and: “Queue this for Instagram and YouTube”
+   - “Publish P0001 to Instagram” / “Posted on Instagram”
 
 4. Master files live under [`band/`](band/), [`setlists/`](setlists/), [`media/`](media/), and [`social/`](social/).
 
@@ -31,15 +31,15 @@ Workspace for members, gigs, rehearsals, songs/setlists, and a **queue-only** so
 
 Statuses: [`band/CATEGORIES.md`](band/CATEGORIES.md). Caption limits: [`social/PLATFORMS.md`](social/PLATFORMS.md).
 
-## Media and posting (v1)
+## Media and posting
 
 1. Drop a file in `media/inbox/` or attach it in chat.
 2. Name platforms (or paste profile URLs).
 3. The agent files the asset as `A0001-slug.ext` in `media/library/`, drafts captions, and appends one `social/posts.csv` row **per platform** with `status=queued`.
-4. You post yourself. Then say “posted on Instagram” so that row becomes `posted`.
+4. **Instagram / YouTube live:** say “publish this” after env is set up ([`social/LIVE_PUBLISH.md`](social/LIVE_PUBLISH.md)). Other networks: you post, then say “posted on Facebook”.
 
-The agent does **not** log into socials or publish.
+The agent does **not** log into socials in a browser. Tokens stay in gitignored `config/*.env`.
 
 ## Out of scope for now
 
-Finances, merch, gear inventories, and live publish APIs.
+Finances, merch, gear inventories, and live APIs for Facebook, TikTok, X, and Threads.

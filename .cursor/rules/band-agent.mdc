@@ -33,8 +33,8 @@ Always capture when known: **member name + role**; **gig date + venue**; **media
 - CSV: preserve header; escape commas in fields with double quotes.
 - Status/platform: lowercase snake_case.
 - Privacy: treat PII carefully; don't invent contact details.
-- Publishing is queue-only. Do not log into socials, open posting UIs, or call publish APIs. Save media, draft captions, record destinations. The user posts.
+- Queue by default (save media, draft captions). Do not log into socials in a browser. Call Instagram/YouTube publish APIs only when the user explicitly asks to publish **and** `config/instagram.env` / `config/youtube.env` exist. Follow `.cursor/skills/live-publish/SKILL.md`. Never print tokens.
 
 ## Media dump
 
-When the user attaches a photo/video or drops a file in `media/inbox/` and names platforms or pastes profile URLs, follow `.cursor/skills/media-queue/SKILL.md`.
+When the user attaches a photo/video or drops a file in `media/inbox/` and names platforms or pastes profile URLs, follow `.cursor/skills/media-queue/SKILL.md`. Live post: `.cursor/skills/live-publish/SKILL.md`.

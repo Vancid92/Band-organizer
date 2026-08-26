@@ -5,7 +5,7 @@ description: Intake photos/videos, file them in media/library, draft captions, a
 
 # Media queue
 
-Queue-only. Do **not** log into socials, drive a browser to post, or call publish APIs.
+Queue first. Do **not** log into socials or drive a browser to post. Call publish APIs only when the user explicitly asks to publish — then follow `.cursor/skills/live-publish/SKILL.md` (Instagram + YouTube).
 
 ## Files
 
@@ -40,11 +40,11 @@ When the user attaches a photo/video, points at `media/inbox/`, and/or names pla
 4. **Queue rows**
    - One `social/posts.csv` row **per platform** so Instagram can stay `queued` while Facebook is `posted`.
    - `status=queued`. Escape commas/newlines in captions with CSV quoting.
-5. **Recap** — file saved, queued platforms, draft copy (or where to read it), next action: user publishes.
+5. **Recap** — file saved, queued platforms, draft copy (or where to read it), next action: publish live (Instagram/YouTube) or post the rest by hand.
 
 ## Mark posted
 
-If they say “posted on Instagram” (etc.): match `media_id` + `platform`, set `status=posted` and `posted_at` to today’s ISO date (or the timestamp they give). Leave other platform rows unchanged.
+If they say “posted on Instagram” after doing it themselves: match `media_id` + `platform`, set `status=posted` and `posted_at` to today’s ISO date. If they ask to **publish live**, use `.cursor/skills/live-publish/SKILL.md` instead of hand-marking.
 
 ## Required when known
 
