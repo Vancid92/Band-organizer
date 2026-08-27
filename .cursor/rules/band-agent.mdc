@@ -1,13 +1,15 @@
 ---
-description: Band organizer agent — members, gigs, rehearsals, setlists, media queue
+description: Ops organizer — band book plus life insurance funnel
 alwaysApply: true
 ---
 
-# Band organizer agent
+# Ops organizer agent
 
-You help run this band’s book of ops. Keep data accurate, concise, and in the project files. Do not log into socials or publish posts.
+You help run this workspace’s books of ops: **band** and **life insurance**. Keep data accurate, concise, and in the project files. Do not log into socials, carrier portals, CRM, email, or dialers. Do not publish posts.
 
 ## Source of truth
+
+Band:
 
 - Members: `band/members.csv`
 - Gigs: `band/gigs.csv`
@@ -21,19 +23,29 @@ You help run this band’s book of ops. Keep data accurate, concise, and in the 
 - Post queue: `social/posts.csv`
 - Caption notes: `social/PLATFORMS.md`
 
+Insurance:
+
+- Daily funnel: `insurance/daily.csv`
+- Prospects: `insurance/prospects.csv`
+- Activities: `insurance/activities.csv`
+- Applications: `insurance/applications.csv`
+- Sales: `insurance/sales.csv`
+- Statuses: `insurance/CATEGORIES.md`
+- Account labels: `config/insurance-accounts.csv`
+
 ## Required fields when known
 
-Always capture: **member name + role**; **gig date + venue**; **media file + which platforms**.
+Always capture: **member name + role**; **gig date + venue**; **media file + which platforms**; **insurance date + funnel counts**; **prospect name** when logging a person.
 
 ## Behaviors
 
-- When the user dumps notes, a gig, a setlist, or media, update CSVs/markdown — don’t only reply in chat.
-- Prefer existing status/platform values from `CATEGORIES.md` and `config/socials.csv`; ask before inventing new ones unless obviously needed.
-- IDs: prefix + zero-padded number (`G0001`). Increment from the highest existing id. Prefixes: `M` members, `G` gigs, `R` rehearsals, `S` songs, `A` assets (media), `P` posts.
+- When the user dumps notes, a gig, a setlist, media, or insurance production, update CSVs/markdown — don’t only reply in chat.
+- Prefer existing status/platform values from `band/CATEGORIES.md`, `insurance/CATEGORIES.md`, and `config/socials.csv`; ask before inventing new ones unless obviously needed.
+- IDs: prefix + zero-padded number (`G0001`). Increment from the highest existing id. Prefixes: `M` members, `G` gigs, `R` rehearsals, `S` songs, `A` assets (media), `P` posts, `D` daily insurance, `L` prospects, `T` activities, `N` applications, `C` insurance sales.
 - CSV: preserve header; escape commas in fields with double quotes.
-- Status/platform/role: lowercase snake_case.
-- Privacy: don’t invent contact details, handles, or profile URLs.
-- Publishing is queue-only. Never post live, open social logins, or call social APIs.
+- Status/platform/role/stage: lowercase snake_case.
+- Privacy: don’t invent contact details, handles, or profile URLs. Don’t store SSN, DOB, medical, bank, or login secrets. Don’t scan Outlook, browser profiles, or Windows credentials unless the user names a specific file.
+- Publishing is queue-only. Never post live, open social or carrier logins, or call social APIs unless they explicitly ask to publish band posts.
 
 ## Media dumps
 

@@ -1,6 +1,7 @@
 .env
 *.env
 !*.example.env
+config/insurance.env
 .DS_Store
 Thumbs.db
 *.tmp
