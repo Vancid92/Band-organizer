@@ -43,8 +43,8 @@ Examples: `vocals`, `guitar`, `bass`, `drums`, `keys`, `other`. Combine with a s
 
 | Status | Meaning |
 |--------|---------|
-| `queued` | Draft ready; not live yet |
-| `posted` | Live (API publish or you confirmed) |
+| `queued` | Draft ready; you still publish |
+| `posted` | You confirmed it went live |
 | `skipped` | Not posting this platform |
 
 ## Platforms
